@@ -13,7 +13,9 @@ function main() {
   hashmap.set('Hobbit', 'Frodo');
   hashmap.set('Elf', 'Legolas');
   console.log(hashmap.get('Elf'));
-
+  console.log(anagramOfPalindrome('starrats'), 'SHOULD BE TRUE');
+  console.log(anagramOfPalindrome('shane and colin'), 'SHOULD BE FALSE');
+  console.log(anagramOfPalindrome('lionoil'));
 
 
   //printHashMap(hashmap);
@@ -28,14 +30,15 @@ function anagramOfPalindrome(string) {
   const map = new HashMap();
   let odd = 0;
   for (let i in string) {
+    let charCount;
     try {
-      let charCount = map.get(string[i]);
+      charCount = map.get(string[i]);
       charCount++;
       charCount % 2 === 0 ? odd-- : odd++;
       map.set(string[i], charCount);
     }
     catch {
-      let charCount = 1;
+      charCount = 1;
       map.set(string[i], charCount);
       odd++;
     }
