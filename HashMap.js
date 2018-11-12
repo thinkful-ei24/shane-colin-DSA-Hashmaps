@@ -25,7 +25,7 @@ class HashMap {
       key,
       value
     };
-    this.length++
+    this.length++;
   }
 
   remove(key) {
