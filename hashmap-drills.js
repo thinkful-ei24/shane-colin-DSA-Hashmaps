@@ -37,7 +37,7 @@ function anagramOfPalindrome(string) {
       charCount % 2 === 0 ? odd-- : odd++;
       map.set(string[i], charCount);
     }
-    catch {
+    catch (e) {
       charCount = 1;
       map.set(string[i], charCount);
       odd++;
