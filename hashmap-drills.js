@@ -65,10 +65,9 @@ function anagramOfPalindrome(string) {
 
 function anagram(anagrams) {
   const map = new HashMap();
-  let keys = [];
+  const keys = [];
 
-  for (let index in anagrams) {
-    let word = anagrams[index];
+  for (let word of anagrams) {
     let sortedWord = word.split('').sort().join('');
 
     try{
@@ -79,9 +78,9 @@ function anagram(anagrams) {
       keys.push(sortedWord);
     }
   }
-  let result = [];
-  for(let key in keys){
-    result.push(map.get(keys[key]));
+  const result = [];
+  for(let key of keys){
+    result.push(map.get(key));
   }
   return result;
 }
