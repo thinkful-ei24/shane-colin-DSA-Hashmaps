@@ -58,3 +58,4 @@ function anagramOfPalindrome(string) {
 //add 1 to coutner right away
 //compare to the rest of them to find if there's a match
 //set to hashmap
+//change
