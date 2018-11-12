@@ -62,3 +62,28 @@ function anagramOfPalindrome(string) {
 //compare to the rest of them to find if there's a match
 //set to hashmap
 //change
+
+function anagram(anagrams) {
+  const map = new HashMap();
+  let keys = [];
+
+  for (let index in anagrams) {
+    let word = anagrams[index];
+    let sortedWord = word.split('').sort().join('');
+
+    try{
+      map.set(sortedWord, [...map.get(sortedWord), word]);
+    }
+    catch (e) {
+      map.set(sortedWord, [word])
+      keys.push(sortedWord);
+    }
+  }
+  let result = [];
+  for(let key in keys){
+    result.push(map.get(keys[key]));
+  }
+  return result;
+}
+console.log(anagram(['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']));
+
